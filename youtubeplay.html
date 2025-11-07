@@ -30,9 +30,11 @@
     const params = new URLSearchParams(window.location.search);
     const videoId = params.get("id");
 
+    // 기본값 설정 (없을 때 예비 영상)
+    const defaultId = "dQw4w9WgXcQ";
+
     const iframe = document.getElementById("youtubePlayer");
-    iframe.src = "https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0";
+    iframe.src = `https://www.youtube.com/embed/${videoId || defaultId}?autoplay=1&rel=0`;
   </script>
 </body>
-
 </html>
